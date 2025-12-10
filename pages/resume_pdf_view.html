@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sankha Subhra Chakraborty - Resume PDF View | PortfolioForge</title>
+    <meta name="description" content="Professional resume of Sankha Subhra Chakraborty - Computer Science student specializing in full-stack development, machine learning, and modern web technologies." />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <style>
+        @media print {
+            body { 
+                background: white !important; 
+                color: black !important;
+                font-size: 12px;
+                line-height: 1.4;
+            }
+            .no-print { display: none !important; }
+            .print-only { display: block !important; }
+            .page-break { page-break-before: always; }
+            .avoid-break { page-break-inside: avoid; }
+            .card { 
+                box-shadow: none !important; 
+                border: 1px solid #e2e8f0 !important;
+                margin-bottom: 1rem;
+            }
+            .text-primary { color: #2563eb !important; }
+            .text-accent { color: #10b981 !important; }
+            .bg-primary { background-color: #2563eb !important; color: white !important; }
+            .bg-accent { background-color: #10b981 !important; color: white !important; }
+            a { color: #2563eb !important; text-decoration: underline; }
+        }
+        
+        .pdf-container {
+            max-width: 8.5in;
+            min-height: 11in;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .print-only { display: none; }
+        
+        @page {
+            size: A4;
+            margin: 0.5in;
+        }
+    </style>
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fportfoliof2838back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-secondary-100 text-text-primary">
+    <!-- Header Navigation -->
+    <nav class="no-print fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-md border-b border-border">
+        <div class="container-max px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <svg class="w-8 h-8 text-primary mr-2" viewBox="0 0 32 32" fill="currentColor">
+                        <path d="M16 2L3 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-13-5z"/>
+                        <path d="M12 14l2 2 6-6" stroke="white" stroke-width="2" fill="none"/>
+                    </svg>
+                    <span class="text-xl font-bold text-gradient">PortfolioForge</span>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="flex items-center space-x-6">
+                    <a href="homepage.html" class="text-text-secondary hover:text-primary transition-colors">
+                        <svg class="w-5 h-5 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                        </svg>
+                        Back to Portfolio
+                    </a>
+                    
+                    <!-- Action Buttons -->
+                    <div class="flex items-center space-x-3">
+                        <button id="print-btn" class="btn-secondary text-sm px-4 py-2">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H3a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H7a2 2 0 00-2 2v4a2 2 0 002 2z"/>
+                            </svg>
+                            Print
+                        </button>
+                        <button id="download-btn" class="btn-primary text-sm px-4 py-2">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                            Download PDF
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PDF Container -->
+    <div class="min-h-screen pt-20 pb-8 no-print">
+        <div class="container-max px-4 sm:px-6 lg:px-8">
+            <!-- PDF Viewer Header -->
+            <div class="text-center mb-8">
+                <h1 class="text-3xl font-bold mb-2">Resume PDF View</h1>
+                <p class="text-text-secondary">Professional resume format - Ready for download and printing</p>
+                <div class="flex items-center justify-center mt-4 text-sm text-text-secondary">
+                    <svg class="w- h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    Last updated: October 2025
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      
+    }
+    img {
+      width: 250%;
+      height: 250%;
+      object-fit: contain; /* keeps aspect ratio */
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <img src="/assets/resume.jpg" alt="My Resume">
+</body>
+
+
+
+
+
+
+
+    <!-- Download Success Modal -->
+    <div id="download-modal" class="no-print fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center">
+        <div class="bg-surface rounded-xl p-6 max-w-md mx-4 shadow-hover">
+            <div class="text-center">
+                <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Download Successful!</h3>
+                <p class="text-text-secondary mb-4 **dark:text-secondary-300**">Your resume has been downloaded successfully. Thank you for your interest!</p>
+                <div class="flex space-x-3">
+                    <button id="close-modal" class="btn-secondary flex-1">Close</button>
+                    <a href="homepage.html" class="btn-primary flex-1 text-center">Back to Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Print functionality
+        document.getElementById('print-btn').addEventListener('click', () => {
+            window.print();
+        });
+
+
+        // Download functionality
+        document.getElementById('download-btn').addEventListener('click', () => {
+            const link = document.createElement('a');
+            link.href = '/assets/Sankha_Subhra_Chakraborty_Resume.pdf'; // <-- path to your actual resume file
+            link.download = `Sankha_Subhra_Chakraborty_Resume.pdf`; // <-- save name
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+    // Show download modal
+    const modal = document.getElementById('download-modal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+
+
+
+
+
+
+
+            
+            
+            // Simulate download delay
+            setTimeout(() => {
+                console.log('Resume downloaded:', link.download);
+            }, 500);
+        });
+
+        // Close modal functionality
+        document.getElementById('close-modal').addEventListener('click', () => {
+            const modal = document.getElementById('download-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        });
+
+        // Close modal on backdrop click
+        document.getElementById('download-modal').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                const modal = document.getElementById('download-modal');
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            // Ctrl/Cmd + P for print
+            if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+                e.preventDefault();
+                window.print();
+            }
+            
+            // Ctrl/Cmd + S for download
+            if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+                e.preventDefault();
+                document.getElementById('download-btn').click();
+            }
+            
+            // Escape to close modal
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('download-modal');
+                if (!modal.classList.contains('hidden')) {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                }
+            }
+        });
+
+        // Auto-generate PDF metadata
+        document.addEventListener('DOMContentLoaded', () => {
+            // Update page title with current date
+            const currentDate = new Date().toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'long' 
+            });
+            document.title = `Sankha Subhra Chakraborty - Resume PDF View | ${currentDate} | PortfolioForge`;
+            
+            // Add print-specific styles
+            const printStyles = document.createElement('style');
+            printStyles.textContent = `
+                @media print {
+                    .pdf-container {
+                        box-shadow: none !important;
+                        margin: 0 !important;
+                        padding: 0.5in !important;
+                    }
+                }
+            `;
+            document.head.appendChild(printStyles);
+        });
+
+        // Track resume views (analytics placeholder)
+        console.log('Resume PDF viewed at:', new Date().toISOString());
+        
+        // Performance monitoring
+        window.addEventListener('load', () => {
+            const loadTime = performance.now();
+            console.log(`Resume PDF loaded in ${Math.round(loadTime)}ms`);
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

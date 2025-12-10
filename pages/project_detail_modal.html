@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Details - E-commerce Platform | Sankha Subhra Chakraborty Portfolio</title>
+    <meta name="description" content="Detailed case study of the E-commerce Platform project - Full-stack solution with React, Node.js, and PostgreSQL featuring real-time inventory management." />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fportfoliof2838back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<!-- <body class="bg-background text-text-primary transition-colors duration-300"> -->
+<body class="bg-background text-text-primary dark:bg-[#0F172A] dark:text-[#F8FAFC] transition-colors duration-300">
+    <!-- Modal Backdrop -->
+    <div id="modal-backdrop" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-100 transition-opacity duration-300">
+        <!-- Modal Container -->
+        <div id="modal-container" class="bg-surface rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden shadow-hover transform scale-100 transition-all duration-300">
+            <!-- Modal Header -->
+            <div class="sticky top-0 bg-surface/95 backdrop-blur-md border-b border-border p-6 flex items-center justify-between z-10">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold">E-commerce Platform</h1>
+                        <p class="text-text-secondary">Full-Stack Web Development</p>
+                    </div>
+                </div>
+                
+                <!-- Close Button -->
+                <button id="close-modal" class="p-2 rounded-lg hover:bg-secondary-100 transition-colors" aria-label="Close modal">
+                    <svg class="w-6 h-6 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Modal Content -->
+            <div class="overflow-y-auto max-h-[calc(90vh-88px)]">
+                <!-- Hero Section -->
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="E-commerce Platform Dashboard Interface" class="w-full h-80 object-cover" loading="lazy" onerror="this.src='https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                    
+                    <!-- Project Status Badge -->
+                    <div class="absolute top-6 right-6">
+                        <span class="px-4 py-2 bg-accent text-white text-sm font-medium rounded-full flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            Completed
+                        </span>
+                    </div>
+                    
+                    <!-- Action Buttons Overlay -->
+                    <div class="absolute bottom-6 left-6 flex space-x-3">
+                        <a href="https://ecommerce-demo.alexchen.dev" target="_blank" class="btn-primary inline-flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                            </svg>
+                            Live Demo
+                        </a>
+                        <a href="https://github.com/Sankhasubhra123/ecommerce-platform" target="_blank" class="btn-secondary inline-flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            View Code
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Content Sections -->
+                <div class="p-6 space-y-8">
+                    <!-- Project Overview -->
+                    <section>
+                        <div class="grid lg:grid-cols-3 gap-8">
+                            <!-- Main Description -->
+                            <div class="lg:col-span-2">
+                                <h2 class="text-2xl font-semibold mb-4">Project Overview</h2>
+                                <div class="prose prose-slate max-w-none">
+                                    <p class="text-text-secondary leading-relaxed mb-4">
+                                        The E-commerce Platform represents a comprehensive full-stack solution designed to address the growing need for small to medium businesses to establish a robust online presence. This project emerged from identifying the gap between expensive enterprise solutions and basic template-based stores that lack customization and scalability.
+                                    </p>
+                                    <p class="text-text-secondary leading-relaxed mb-4">
+                                        Built with modern web technologies, the platform features a React-based frontend with server-side rendering capabilities, a Node.js/Express backend with RESTful API architecture, and PostgreSQL for reliable data persistence. The system handles everything from product catalog management to secure payment processing and real-time inventory tracking.
+                                    </p>
+                                    <p class="text-text-secondary leading-relaxed">
+                                        What sets this platform apart is its focus on performance optimization, achieving sub-2-second load times, and its comprehensive admin dashboard that empowers business owners to manage their operations without technical expertise. The project demonstrates proficiency in full-stack development, database design, payment integration, and modern deployment practices.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Project Metrics -->
+                            <div class="space-y-6">
+                                <div class="card **dark:bg-secondary-900**">
+                                    <h3 class="font-semibold mb-4">Project Metrics</h3>
+                                    <div class="space-y-4">
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-text-secondary">Development Time</span>
+                                            <span class="font-medium">3 months</span>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-text-secondary">Lines of Code</span>
+                                            <span class="font-medium">12,500+</span>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-text-secondary">Test Coverage</span>
+                                            <span class="font-medium">85%</span>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-text-secondary">Performance Score</span>
+                                            <span class="font-medium">94/100</span>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-text-secondary">Mobile Responsive</span>
+                                            <span class="font-medium text-accent">✓ Yes</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card **dark:bg-secondary-900**">
+                                    <h3 class="font-semibold mb-4">Technology Stack</h3>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">React</span>
+                                        <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Node.js</span>
+                                        <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Express</span>
+                                        <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">PostgreSQL</span>
+                                        <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Stripe</span>
+                                        <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Redis</span>
+                                        <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">AWS</span>
+                                        <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Docker</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Challenge & Solution -->
+                    <section>
+                        <h2 class="text-2xl font-semibold mb-6">Challenge & Solution Architecture</h2>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <!-- Challenge -->
+                            <div class="card **dark:bg-secondary-900**">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-10 h-10 bg-warning/10 rounded-lg flex items-center justify-center mr-3">
+                                        <svg class="w-5 h-5 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 15.5c-.77.833.192 2.5 1.732 2.5z"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-xl font-semibold">The Challenge</h3>
+                                </div>
+                                <ul class="space-y-3 text-text-secondary">
+                                    <li class="flex items-start">
+                                        <span class="w-2 h-2 bg-warning rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                        <span>Small businesses needed affordable, scalable e-commerce solutions without enterprise complexity</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="w-2 h-2 bg-warning rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                        <span>Real-time inventory management across multiple sales channels</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="w-2 h-2 bg-warning rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                        <span>Secure payment processing with multiple gateway support</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="w-2 h-2 bg-warning rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                        <span>Mobile-first design with optimal performance on all devices</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Solution -->
+                            <div class="card **dark:bg-secondary-900**">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center mr-3">
+                                        <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-xl font-semibold">The Solution</h3>
+                                </div>
+                                <ul class="space-y-3 text-text-secondary">
+                                    <li class="flex items-start">
+                                        <span class="w-2 h-2 bg-accent rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                        <span>Modular microservices architecture enabling easy scaling and maintenance</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="w-2 h-2 bg-accent rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                        <span>WebSocket integration for real-time inventory updates and notifications</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="w-2 h-2 bg-accent rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                        <span>Stripe integration with webhook handling for secure payment processing</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="w-2 h-2 bg-accent rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                        <span>Progressive Web App features with offline capability and push notifications</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Technical Implementation -->
+                    <section>
+                        <h2 class="text-2xl font-semibold mb-6">Technical Implementation</h2>
+                        
+                        <!-- Architecture Diagram -->
+                        <div class="card mb-6">
+                            <h3 class="text-lg font-semibold mb-4">System Architecture</h3>
+                            <div class="bg-secondary-50 rounded-lg p-6">
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                    <!-- Frontend -->
+                                    <div class="text-center">
+                                        <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                            </svg>
+                                        </div>
+                                        <h4 class="font-semibold mb-2">Frontend Layer</h4>
+                                        <p class="text-sm text-text-secondary">React SPA with Redux state management and responsive design</p>
+                                    </div>
+
+                                    <!-- Backend -->
+                                    <div class="text-center">
+                                        <div class="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                                            <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/>
+                                            </svg>
+                                        </div>
+                                        <h4 class="font-semibold mb-2">API Layer</h4>
+                                        <p class="text-sm text-text-secondary">Node.js/Express RESTful API with JWT authentication</p>
+                                    </div>
+
+                                    <!-- Database -->
+                                    <div class="text-center">
+                                        <div class="w-16 h-16 bg-warning/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                                            <svg class="w-8 h-8 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/>
+                                            </svg>
+                                        </div>
+                                        <h4 class="font-semibold mb-2">Data Layer</h4>
+                                        <p class="text-sm text-text-secondary">PostgreSQL with Redis caching for optimal performance</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Key Features -->
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="card **dark:bg-secondary-900**">
+                                <h3 class="text-lg font-semibold mb-4">Frontend Features</h3>
+                                <ul class="space-y-2 text-text-secondary">
+                                    <li class="flex items-center">
+                                        <svg class="w-4 h-4 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                        Responsive design with mobile-first approach
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-4 h-4 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                        Advanced product filtering and search
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-4 h-4 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                        Real-time cart updates and wishlist
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-4 h-4 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                        Progressive Web App capabilities
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-4 h-4 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                        Image optimization and lazy loading
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="card **dark:bg-secondary-900**">
+                                <h3 class="text-lg font-semibold mb-4">Backend Features</h3>
+                                <ul class="space-y-2 text-text-secondary">
+                                    <li class="flex items-center">
+                                        <svg class="w-4 h-4 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                        RESTful API with comprehensive documentation
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-4 h-4 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                        JWT-based authentication system
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-4 h-4 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                        Stripe webhook integration
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-4 h-4 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                        Real-time inventory management
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-4 h-4 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                        Automated email notifications
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Code Examples -->
+                    <section>
+                        <h2 class="text-2xl font-semibold mb-6">Code Implementation Highlights</h2>
+                        
+                        <div class="space-y-6">
+                            <!-- React Component Example -->
+                            <div class="card **dark:bg-secondary-900**">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-lg font-semibold">React Product Component</h3>
+                                    <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">React</span>
+                                </div>
+                                <div class="bg-secondary-900 rounded-lg p-4 overflow-x-auto">
+                                    <pre class="text-sm text-secondary-100 font-mono"><code>const ProductCard = ({ product, onAddToCart }) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const handleAddToCart = async () => {
+    setIsLoading(true);
+    try {
+      await onAddToCart(product.id);
+      toast.success('Added to cart successfully!');
+    } catch (error) {
+      toast.error('Failed to add to cart');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    &lt;div className="card hover:shadow-hover transition-all duration-300"&gt;
+      &lt;div className="relative overflow-hidden rounded-lg mb-4"&gt;
+        &lt;img
+          src={product.image}
+          alt={product.name}
+          className={`w-full h-48 object-cover transition-opacity duration-300 ${
+            imageLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
+          onLoad={() => setImageLoaded(true)}
+          loading="lazy"
+        /&gt;
+        {!imageLoaded && (
+          &lt;div className="absolute inset-0 bg-secondary-100 animate-pulse" /&gt;
+        )}
+      &lt;/div&gt;
+      
+      &lt;h3 className="font-semibold mb-2"&gt;{product.name}&lt;/h3&gt;
+      &lt;p className="text-text-secondary text-sm mb-4"&gt;{product.description}&lt;/p&gt;
+      
+      &lt;div className="flex items-center justify-between"&gt;
+        &lt;span className="text-xl font-bold text-primary"&gt;
+          ${product.price}
+        &lt;/span&gt;
+        &lt;button
+          onClick={handleAddToCart}
+          disabled={isLoading}
+          className="btn-primary disabled:opacity-50"
+        &gt;
+          {isLoading ? 'Adding...' : 'Add to Cart'}
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+};</code></pre>
+                                </div>
+                            </div>
+
+                            <!-- API Endpoint Example -->
+                            <div class="card **dark:bg-secondary-900**">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-lg font-semibold">Express API Endpoint</h3>
+                                    <span class="px-3 py-1 bg-accent/10 text-accent text-sm rounded-full">Node.js</span>
+                                </div>
+                                <div class="bg-secondary-900 rounded-lg p-4 overflow-x-auto">
+                                    <pre class="text-sm text-secondary-100 font-mono"><code>// POST /api/cart/add
+router.post('/add', authenticateToken, async (req, res) => {
+  const { productId, quantity = 1 } = req.body;
+  const userId = req.user.id;
+
+  try {
+    // Check product availability
+    const product = await Product.findById(productId);
+    if (!product) {
+      return res.status(404).json({ error: 'Product not found' });
+    }
+
+    if (product.stock < quantity) {
+      return res.status(400).json({ 
+        error: 'Insufficient stock',
+        available: product.stock 
+      });
+    }
+
+    // Add to cart or update quantity
+    const cartItem = await CartItem.findOne({ 
+      userId, 
+      productId 
+    });
+
+    if (cartItem) {
+      cartItem.quantity += quantity;
+      await cartItem.save();
+    } else {
+      await CartItem.create({
+        userId,
+        productId,
+        quantity,
+        price: product.price
+      });
+    }
+
+    // Update product stock
+    product.stock -= quantity;
+    await product.save();
+
+    // Emit real-time update
+    io.to(`user_${userId}`).emit('cartUpdated', {
+      productId,
+      quantity: cartItem ? cartItem.quantity : quantity
+    });
+
+    res.json({ 
+      success: true, 
+      message: 'Item added to cart' 
+    });
+
+  } catch (error) {
+    console.error('Cart add error:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Performance & Results -->
+                    <section>
+                        <h2 class="text-2xl font-semibold mb-6">Performance & Results</h2>
+                        
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <!-- Performance Metrics -->
+                            <div class="card **dark:bg-secondary-900**">
+                                <h3 class="text-lg font-semibold mb-4">Performance Metrics</h3>
+                                <div class="space-y-4">
+                                    <div>
+                                        <div class="flex justify-between items-center mb-2">
+                                            <span class="text-text-secondary">Lighthouse Performance</span>
+                                            <span class="font-semibold">94/100</span>
+                                        </div>
+                                        <div class="w-full bg-secondary-200 rounded-full h-2">
+                                            <div class="bg-accent h-2 rounded-full" style="width: 94%"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <div class="flex justify-between items-center mb-2">
+                                            <span class="text-text-secondary">First Contentful Paint</span>
+                                            <span class="font-semibold">1.2s</span>
+                                        </div>
+                                        <div class="w-full bg-secondary-200 rounded-full h-2">
+                                            <div class="bg-primary h-2 rounded-full" style="width: 85%"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <div class="flex justify-between items-center mb-2">
+                                            <span class="text-text-secondary">Time to Interactive</span>
+                                            <span class="font-semibold">2.1s</span>
+                                        </div>
+                                        <div class="w-full bg-secondary-200 rounded-full h-2">
+                                            <div class="bg-warning h-2 rounded-full" style="width: 78%"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <div class="flex justify-between items-center mb-2">
+                                            <span class="text-text-secondary">Accessibility Score</span>
+                                            <span class="font-semibold">98/100</span>
+                                        </div>
+                                        <div class="w-full bg-secondary-200 rounded-full h-2">
+                                            <div class="bg-accent h-2 rounded-full" style="width: 98%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Business Impact -->
+                            <div class="card **dark:bg-secondary-900**">
+                                <h3 class="text-lg font-semibold mb-4">Business Impact</h3>
+                                <div class="space-y-4">
+                                    <div class="flex items-center justify-between p-3 bg-accent/10 rounded-lg">
+                                        <div>
+                                            <div class="text-2xl font-bold text-accent">40%</div>
+                                            <div class="text-sm text-text-secondary">Faster Load Times</div>
+                                        </div>
+                                        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                                        </svg>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-between p-3 bg-primary/10 rounded-lg">
+                                        <div>
+                                            <div class="text-2xl font-bold text-primary">25%</div>
+                                            <div class="text-sm text-text-secondary">Higher Conversion</div>
+                                        </div>
+                                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                        </svg>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-between p-3 bg-warning/10 rounded-lg">
+                                        <div>
+                                            <div class="text-2xl font-bold text-warning">60%</div>
+                                            <div class="text-sm text-text-secondary">Mobile Traffic</div>
+                                        </div>
+                                        <svg class="w-8 h-8 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Lessons Learned -->
+                        <div class="card **dark:bg-secondary-900**">
+                            <h3 class="text-lg font-semibold mb-4">Key Learnings & Growth</h3>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-medium mb-3 text-accent">Technical Insights</h4>
+                                    <ul class="space-y-2 text-text-secondary text-sm">
+                                        <li>• Database indexing strategies significantly improved query performance</li>
+                                        <li>• Implementing Redis caching reduced API response times by 65%</li>
+                                        <li>• WebSocket connections for real-time updates enhanced user experience</li>
+                                        <li>• Proper error handling and logging crucial for production stability</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-3 text-primary">Development Process</h4>
+                                    <ul class="space-y-2 text-text-secondary text-sm">
+                                        <li>• Test-driven development approach improved code quality</li>
+                                        <li>• Regular code reviews helped maintain consistent standards</li>
+                                        <li>• Agile methodology with weekly sprints kept project on track</li>
+                                        <li>• User feedback integration led to better feature prioritization</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Image Gallery -->
+                    <section>
+                        <h2 class="text-2xl font-semibold mb-6">Project Gallery</h2>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <div class="relative group cursor-pointer" onclick="openImageModal(this)">
+                                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Product Catalog Interface" class="w-full h-48 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105" loading="lazy" onerror="this.src='https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 rounded-lg flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <div class="relative group cursor-pointer" onclick="openImageModal(this)">
+                                <img src="https://images.pixabay.com/photo/2016/11/29/06/15/plans-1867745_1280.jpg" alt="Admin Dashboard Overview" class="w-full h-48 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105" loading="lazy" onerror="this.src='https://images.pexels.com/photos/590016/pexels-photo-590016.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 rounded-lg flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <div class="relative group cursor-pointer" onclick="openImageModal(this)">
+                                <img src="https://images.unsplash.com/photo-1556742111-a301076d9d18?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Mobile Responsive Design" class="w-full h-48 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2017/05/10/19/29/smartphone-2301772_1280.jpg'; this.onerror=null;" />
+                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 rounded-lg flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Social Sharing & Related Projects -->
+                    <section>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <!-- Social Sharing -->
+                            <div class="card **dark:bg-secondary-900**">
+                                <h3 class="text-lg font-semibold mb-4">Share This Project</h3>
+                                <div class="flex space-x-3">
+                                    <button onclick="shareProject('twitter')" class="flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
+                                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                        </svg>
+                                        Twitter
+                                    </button>
+                                    <button onclick="shareProject('linkedin')" class="flex items-center px-4 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition-colors">
+                                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                        </svg>
+                                        LinkedIn
+                                    </button>
+                                    <button onclick="copyProjectLink()" class="flex items-center px-4 py-2 bg-secondary-600 text-white rounded-lg hover:bg-secondary-700 transition-colors">
+                                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                        </svg>
+                                        Copy Link
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Related Projects -->
+                            <div class="card **dark:bg-secondary-900**">
+                                <h3 class="text-lg font-semibold mb-4">Related Projects</h3>
+                                <div class="space-y-3">
+                                    <a href="javascript:void(0)" onclick="loadProject('ai-image-recognition')" class="flex items-center p-3 rounded-lg hover:bg-secondary-50 transition-colors">
+                                        <img src="https://images.pixabay.com/photo/2023/01/26/22/14/ai-generated-7747171_1280.jpg" alt="AI Image Recognition" class="w-12 h-12 rounded-lg object-cover mr-3" loading="lazy" onerror="this.src='https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                                        <div>
+                                            <h4 class="font-medium">AI Image Recognition</h4>
+                                            <p class="text-sm text-text-secondary">Machine Learning</p>
+                                        </div>
+                                    </a>
+                                    
+                                    <a href="javascript:void(0)" onclick="loadProject('fitness-tracker')" class="flex items-center p-3 rounded-lg hover:bg-secondary-50 transition-colors">
+                                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Fitness Tracker App" class="w-12 h-12 rounded-lg object-cover mr-3" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2016/12/09/11/33/smartphone-1894723_1280.jpg'; this.onerror=null;" />
+                                        <div>
+                                            <h4 class="font-medium">Fitness Tracker App</h4>
+                                            <p class="text-sm text-text-secondary">Mobile Development</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Navigation Footer -->
+                    <div class="flex items-center justify-between pt-8 border-t border-border">
+                        <a href="homepage.html" class="btn-secondary inline-flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                            </svg>
+                            Back to Portfolio
+                        </a>
+                        
+                        <div class="flex space-x-3">
+                            <a href="https://ecommerce-demo.alexchen.dev" target="_blank" class="btn-primary inline-flex items-center">
+                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                                </svg>
+                                View Live Demo
+                            </a>
+                            <a href="https://github.com/Sankhasubhra123/ecommerce-platform" target="_blank" class="btn-secondary inline-flex items-center">
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                                GitHub Repository
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div id="image-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-60 hidden flex items-center justify-center p-4">
+        <div class="relative max-w-4xl max-h-[90vh] w-full">
+            <button id="close-image-modal" class="absolute -top-12 right-0 text-white hover:text-secondary-300 transition-colors">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+            <img id="modal-image" src alt class="w-full h-auto max-h-[90vh] object-contain rounded-lg" />
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Modal Management
+        const modalBackdrop = document.getElementById('modal-backdrop');
+        const modalContainer = document.getElementById('modal-container');
+        const closeModalBtn = document.getElementById('close-modal');
+        const imageModal = document.getElementById('image-modal');
+        const closeImageModalBtn = document.getElementById('close-image-modal');
+        const modalImage = document.getElementById('modal-image');
+
+        // Close modal functionality
+        function closeModal() {
+            modalBackdrop.classList.add('opacity-0');
+            modalContainer.classList.add('scale-95');
+            
+            setTimeout(() => {
+                window.location.href = 'homepage.html';
+            }, 300);
+        }
+
+        // Event listeners for closing modal
+        closeModalBtn.addEventListener('click', closeModal);
+        
+        modalBackdrop.addEventListener('click', (e) => {
+            if (e.target === modalBackdrop) {
+                closeModal();
+            }
+        });
+
+        // ESC key support
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                if (!imageModal.classList.contains('hidden')) {
+                    closeImageModal();
+                } else {
+                    closeModal();
+                }
+            }
+        });
+
+        // Image modal functionality
+        function openImageModal(element) {
+            const img = element.querySelector('img');
+            modalImage.src = img.src;
+            modalImage.alt = img.alt;
+            imageModal.classList.remove('hidden');
+            
+            setTimeout(() => {
+                imageModal.classList.add('opacity-100');
+            }, 10);
+        }
+
+        function closeImageModal() {
+            imageModal.classList.add('opacity-0');
+            setTimeout(() => {
+                imageModal.classList.add('hidden');
+                imageModal.classList.remove('opacity-0');
+            }, 300);
+        }
+
+        closeImageModalBtn.addEventListener('click', closeImageModal);
+        imageModal.addEventListener('click', (e) => {
+            if (e.target === imageModal) {
+                closeImageModal();
+            }
+        });
+
+        // Social sharing functionality
+        function shareProject(platform) {
+            const projectTitle = 'E-commerce Platform - Full Stack Development Project';
+            const projectUrl = window.location.href;
+            
+            let shareUrl = '';
+            
+            switch(platform) {
+                case 'twitter':
+                    shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(projectTitle)}&url=${encodeURIComponent(projectUrl)}`;
+                    break;
+                case 'linkedin':
+                    shareUrl = `https://www.linkedin.com/in/sankha-subhra-chakraborty-119598273/?originalSubdomain=in`;
+                    break;
+            }
+            
+            if (shareUrl) {
+                window.open(shareUrl, '_blank', 'width=600,height=400');
+            }
+        }
+
+        function copyProjectLink() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                // Show success message
+                const button = event.target.closest('button');
+                const originalText = button.innerHTML;
+                button.innerHTML = `
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    Copied!
+                `;
+                button.classList.add('bg-accent', 'hover:bg-accent-600');
+                button.classList.remove('bg-secondary-600', 'hover:bg-secondary-700');
+                
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.classList.remove('bg-accent', 'hover:bg-accent-600');
+                    button.classList.add('bg-secondary-600', 'hover:bg-secondary-700');
+                }, 2000);
+            });
+        }
+
+        // Load related projects
+        function loadProject(projectId) {
+            // In a real application, this would load different project data
+            console.log(`Loading project: ${projectId}`);
+            // For demo purposes, just show an alert
+            alert(`Loading ${projectId} project details...`);
+        }
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initialize modal animation
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                modalBackdrop.classList.add('opacity-100');
+                modalContainer.classList.add('scale-100');
+            }, 100);
+        });
+
+        // Prevent body scroll when modal is open
+        document.body.style.overflow = 'hidden';
+        
+        // Restore body scroll when leaving
+        window.addEventListener('beforeunload', () => {
+            document.body.style.overflow = 'auto';
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

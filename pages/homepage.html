@@ -1,0 +1,2041 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sankha Subhra Chakraborty - Full Stack Developer & Computer Science Student</title>
+    <meta name="description" content="Portfolio of Sankha Subhra Chakraborty - Computer Science student specializing in full-stack development, machine learning, and modern web technologies." />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fportfoliof2838back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<!-- <body class="bg-background text-text-primary transition-colors duration-300"> -->
+<body class="bg-background text-text-primary dark:bg-[#0F172A] dark:text-[#F8FAFC] transition-colors duration-300">
+
+    <!-- Sticky Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-md border-b border-border transition-all duration-300" id="navbar">
+        <div class="container-max px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <svg class="w-8 h-8 text-primary mr-2" viewBox="0 0 32 32" fill="currentColor">
+                        <path d="M16 2L3 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-13-5z"/>
+                        <path d="M12 14l2 2 6-6" stroke="white" stroke-width="2" fill="none"/>
+                    </svg>
+                    <span class="text-xl font-bold text-gradient">PortfolioForge</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <!-- <a href="#hero" class="nav-link text-text-secondary hover:text-primary transition-colors">Home</a> -->
+                     <a href="#hero" class="nav-link text-text-secondary hover:text-primary transition-colors dark:text-[#CBD5E1] dark:hover:text-accent">Home</a>
+
+                    <a href="#about" class="nav-link text-text-secondary hover:text-primary transition-colors">About</a>
+                    <a href="#skills" class="nav-link text-text-secondary hover:text-primary transition-colors">Skills</a>
+                    <a href="#projects" class="nav-link text-text-secondary hover:text-primary transition-colors">Projects</a>
+                    <a href="#achievements" class="nav-link text-text-secondary hover:text-primary transition-colors">Achievements</a>
+                    <a href="#contact" class="nav-link text-text-secondary hover:text-primary transition-colors">Contact</a>
+                    
+                    <!-- Theme Toggle -->
+                    <!-- <button id="theme-toggle" class="dark-mode-toggle text-2xl" aria-label="Toggle dark mode">🌞</button> -->
+                    <button id="theme-toggle" aria-label="Toggle theme" class="p-2 rounded-full hover:bg-secondary-100 transition-colors dark:hover:bg-secondary-700">
+    <svg id="sun-icon" class="w-6 h-6 text-primary dark:text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+    </svg>
+    <svg id="moon-icon" class="w-6 h-6 text-primary dark:text-warning hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+    </svg>
+</button>
+
+<!-- <script> 
+
+        // Theme Toggle - New, Complete Logic
+
+const themeToggle = document.getElementById('theme-toggle');
+
+
+
+// 1. On page load, check for saved theme in local storage or system preference
+
+if (
+
+    localStorage.theme === 'dark' || 
+
+    (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+
+) {
+
+    document.documentElement.classList.add('dark');
+
+} else {
+
+    document.documentElement.classList.remove('dark');
+
+}
+
+
+
+// 2. Function to update the theme and store preference
+
+function updateTheme(isDark) {
+
+    const sunIcon = document.getElementById('sun-icon');
+
+    const moonIcon = document.getElementById('moon-icon');
+
+
+
+    if (isDark) {
+
+        document.documentElement.classList.add('dark');
+
+        localStorage.theme = 'dark';
+
+        // Show Moon, Hide Sun
+
+        if (sunIcon) sunIcon.classList.add('hidden');
+
+        if (moonIcon) moonIcon.classList.remove('hidden');
+
+    } else {
+
+        document.documentElement.classList.remove('dark');
+
+        localStorage.theme = 'light';
+
+        // Show Sun, Hide Moon
+
+        if (sunIcon) sunIcon.classList.remove('hidden');
+
+        if (moonIcon) moonIcon.classList.add('hidden');
+
+    }
+
+}
+
+
+
+// 3. Set the initial state of the button icon/style
+
+const initialIsDark = document.documentElement.classList.contains('dark');
+
+const sunIcon = document.getElementById('sun-icon');
+
+const moonIcon = document.getElementById('moon-icon');
+
+
+
+if (initialIsDark) {
+
+    // Initial state is Dark: show Moon
+
+    if (sunIcon) sunIcon.classList.add('hidden');
+
+    if (moonIcon) moonIcon.classList.remove('hidden');
+
+} else {
+
+    // Initial state is Light: show Sun
+
+    if (sunIcon) sunIcon.classList.remove('hidden');
+
+    if (moonIcon) moonIcon.classList.add('hidden');
+
+}
+
+
+
+// 4. Handle the button click event
+
+themeToggle.addEventListener('click', () => {
+
+    const isCurrentlyDark = document.documentElement.classList.contains('dark');
+
+    updateTheme(!isCurrentlyDark);
+
+});
+
+
+
+
+
+    </script> -->
+
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-secondary-100 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="#hero" class="nav-link block px-3 py-2 rounded-lg text-text-secondary hover:text-primary hover:bg-secondary-100 transition-all">Home</a>
+                    <a href="#about" class="nav-link block px-3 py-2 rounded-lg text-text-secondary hover:text-primary hover:bg-secondary-100 transition-all">About</a>
+                    <a href="#skills" class="nav-link block px-3 py-2 rounded-lg text-text-secondary hover:text-primary hover:bg-secondary-100 transition-all">Skills</a>
+                    <a href="#projects" class="nav-link block px-3 py-2 rounded-lg text-text-secondary hover:text-primary hover:bg-secondary-100 transition-all">Projects</a>
+                    <a href="#achievements" class="nav-link block px-3 py-2 rounded-lg text-text-secondary hover:text-primary hover:bg-secondary-100 transition-all">Achievements</a>
+                    <a href="#contact" class="nav-link block px-3 py-2 rounded-lg text-text-secondary hover:text-primary hover:bg-secondary-100 transition-all">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Progress Indicator -->
+    <div class="fixed top-16 left-0 right-0 z-40 h-1 bg-secondary-200">
+        <div id="progress-bar" class="h-full bg-gradient-to-r from-primary to-accent transition-all duration-300 ease-out" style="width: 0%"></div>
+    </div>
+
+    <!-- Hero Landing Zone -->
+    <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-5">
+            <svg class="w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                        <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" stroke-width="0.5"/>
+                    </pattern>
+                </defs>
+                <rect width="100" height="100" fill="url(#grid)"/>
+            </svg>
+        </div>
+
+        <div class="container-max px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center">
+                <!-- Profile Image -->
+                <div class="mb-8 scroll-reveal">
+                    <div class="relative inline-block">
+                        <img src="/assets/myimg.jpg.jpg" alt="Sankha Subhra Chakraborty - Full Stack Developer" class="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover border-4 border-primary shadow-hover mx-auto" loading="lazy" onerror="this.src='https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                        <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-accent rounded-full border-4 border-surface flex items-center justify-center">
+                            <div class="w-3 h-3 bg-white rounded-full animate-pulse"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Name and Title -->
+                <div class="mb-6 scroll-reveal">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
+                        Hi, I'm <span class="text-gradient">Sankha Subhra Chakraborty</span>
+                    </h1>
+                    <div class="text-xl sm:text-2xl text-text-secondary mb-4">
+                        <span id="typing-text" class="border-r-2 border-primary"></span>
+                    </div>
+                    <p class="text-lg text-text-secondary max-w-2xl mx-auto leading-relaxed">
+                        Computer Science student passionate about building innovative solutions that bridge the gap between complex problems and elegant code.
+                    </p>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center scroll-reveal">
+                    <a href="#projects" class="btn-primary inline-flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                        </svg>
+                        View My Work
+                    </a>
+                    <a href="resume_pdf_view.html" class="btn-secondary inline-flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                        Download Resume
+                    </a>
+                </div>
+
+                <!-- Social Links -->
+                <div class="flex justify-center space-x-6 mt-8 scroll-reveal">
+                    <a href="https://github.com/Sankhasubhra123" class="text-text-secondary hover:text-primary transition-colors" aria-label="GitHub">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/sankha-subhra-chakraborty-119598273/?originalSubdomain=in" class="text-text-secondary hover:text-primary transition-colors" aria-label="LinkedIn">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sankhasubhrawork123@gmail.com" 
+                        target="_blank" 
+                        rel="noopener noreferrer" class="text-text-secondary hover:text-primary transition-colors" 
+                        aria-label="Email">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                    </a>
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Ecosystem -->
+    <section id="about" class="section-padding bg-secondary-50">
+        <div class="container-max">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">About Me</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    I am a B.Tech Computer Science and Engineering student at AOT, graduating in 2026, with a strong foundation in Core Java, DBMS, and Data Structures & Algorithms. Proficient in Java, C++, and SQL.</p> 
+                    <p class="text-xl text-text-secondary max-w-3xl mx-auto"> I specialize in developing efficient, scalable software solutions and continuously adapt to emerging technologies. 
+<p class="text-xl text-text-secondary max-w-3xl mx-auto">
+    My analytical mindset enables me to deconstruct complex problems and deliver optimized, reliable outcomes. </p>
+    <p class="text-xl text-text-secondary max-w-3xl mx-auto">I bring proven experience in collaborative environments, with effective communication and coordination skills that enhance team productivity. </p> 
+    <p class="text-xl text-text-secondary max-w-3xl mx-auto">I am committed to leveraging my technical expertise to contribute meaningfully to innovative projects in the field of software development. </p>
+
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Story Content -->
+                <div class="scroll-reveal">
+                    <h3 class="text-2xl font-semibold mb-6 text-gradient">My Journey</h3>
+                    <div class="space-y-4 text-text-secondary leading-relaxed">
+                        <p>
+                            As a Computer Science and Engineering student at AOT, graduating in 2026, I’ve come to appreciate that solving problems is not just about code—it’s about clarity, creativity, and impact. What started as curiosity about how programs actually “think” has grown into a passion for designing systems that are both efficient and meaningful.                        </p>
+                        <p>
+                            My journey has been shaped by a strong foundation in Core Java, DBMS, and Data Structures & Algorithms, along with hands-on experience in Java, C++, and SQL. Through countless hours of debugging and optimizing, I’ve learned that the most rewarding solutions often come from persistence and the ability to approach problems from multiple angles.
+                        </p>
+                        <p>
+                            My approach combines rigorous technical standards with user-centered design thinking. Whether I'm architecting a full-stack application or optimizing machine learning algorithms, I focus on creating solutions that are not just functional, but intuitive and scalable.
+                        </p>
+
+                        <p>
+                            Looking ahead, I’m committed to leveraging my technical expertise and analytical mindset to contribute meaningfully to innovative projects in software development. For me, every challenge is not just a hurdle but a stepping stone toward building technology that makes a real difference.
+                        </p>
+                    </div>
+
+                    <!-- Philosophy Cards -->
+                    <div class="grid sm:grid-cols-2 gap-4 mt-8">
+                        <div class="card **dark:bg-secondary-900**">
+                            <div class="flex items-center mb-3">
+                                <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mr-3">
+                                    <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                                    </svg>
+                                </div>
+                                <h4 class="font-semibold">Innovation</h4>
+                            </div>
+                            <p class="text-sm text-text-secondary">Pushing boundaries with creative solutions to complex problems</p>
+                        </div>
+
+                        <div class="card **dark:bg-secondary-900**">
+                            <div class="flex items-center mb-3">
+                                <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center mr-3">
+                                    <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                    </svg>
+                                </div>
+                                <h4 class="font-semibold">Performance</h4>
+                            </div>
+                            <p class="text-sm text-text-secondary">Optimizing for speed, scalability, and user experience</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Elements -->
+                <div class="scroll-reveal">
+                    <div class="relative">
+                        <img src="/assets/myjourney.jpg" alt="Coding workspace with multiple monitors" class="rounded-2xl shadow-hover w-full h-80 object-cover" loading="lazy" onerror="this.src='https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                        
+                        <!-- Floating Stats -->
+                        <div class="absolute -bottom-6 -left-6 bg-surface rounded-xl p-4 shadow-hover">
+                            <div class="text-2xl font-bold text-primary">8.22</div>
+                            <div class="text-sm text-text-secondary">GPA</div>
+                        </div>
+                        
+                        <div class="absolute -top-6 -right-6 bg-surface rounded-xl p-4 shadow-hover">
+                            <div class="text-2xl font-bold text-accent">15+</div>
+                            <div class="text-sm text-text-secondary">Projects</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Laboratory -->
+    <section id="skills" class="section-padding">
+        <div class="container-max">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">Skills Laboratory</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    A comprehensive toolkit built through continuous learning and hands-on experience
+                </p>
+            </div>
+
+            <!-- Skill Categories -->
+            <div class="grid lg:grid-cols-3 gap-8 mb-12">
+                <!-- Frontend Development -->
+                <div class="card scroll-reveal">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold">Frontend Development</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium">React & Next.js</span>
+                                <span class="text-sm text-text-secondary">90%</span>
+                            </div>
+                            <div class="w-full bg-secondary-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full transition-all duration-1000 ease-out" style="width: 90%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium">TypeScript</span>
+                                <span class="text-sm text-text-secondary">85%</span>
+                            </div>
+                            <div class="w-full bg-secondary-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full transition-all duration-1000 ease-out" style="width: 85%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium">Tailwind CSS</span>
+                                <span class="text-sm text-text-secondary">95%</span>
+                            </div>
+                            <div class="w-full bg-secondary-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full transition-all duration-1000 ease-out" style="width: 95%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend Development -->
+                <div class="card scroll-reveal">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold">Backend Development</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium">Node.js & Express</span>
+                                <span class="text-sm text-text-secondary">88%</span>
+                            </div>
+                            <div class="w-full bg-secondary-200 rounded-full h-2">
+                                <div class="bg-accent h-2 rounded-full transition-all duration-1000 ease-out" style="width: 88%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium">Python & Django</span>
+                                <span class="text-sm text-text-secondary">82%</span>
+                            </div>
+                            <div class="w-full bg-secondary-200 rounded-full h-2">
+                                <div class="bg-accent h-2 rounded-full transition-all duration-1000 ease-out" style="width: 82%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium">PostgreSQL</span>
+                                <span class="text-sm text-text-secondary">80%</span>
+                            </div>
+                            <div class="w-full bg-secondary-200 rounded-full h-2">
+                                <div class="bg-accent h-2 rounded-full transition-all duration-1000 ease-out" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Machine Learning -->
+                <div class="card scroll-reveal">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-warning/10 rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold">Machine Learning</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium">TensorFlow & PyTorch</span>
+                                <span class="text-sm text-text-secondary">75%</span>
+                            </div>
+                            <div class="w-full bg-secondary-200 rounded-full h-2">
+                                <div class="bg-warning h-2 rounded-full transition-all duration-1000 ease-out" style="width: 75%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium">Data Analysis</span>
+                                <span class="text-sm text-text-secondary">85%</span>
+                            </div>
+                            <div class="w-full bg-secondary-200 rounded-full h-2">
+                                <div class="bg-warning h-2 rounded-full transition-all duration-1000 ease-out" style="width: 85%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium">Computer Vision</span>
+                                <span class="text-sm text-text-secondary">70%</span>
+                            </div>
+                            <div class="w-full bg-secondary-200 rounded-full h-2">
+                                <div class="bg-warning h-2 rounded-full transition-all duration-1000 ease-out" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Learning Timeline -->
+            <div class="scroll-reveal">
+                <h3 class="text-2xl font-semibold text-center mb-8">Learning Timeline</h3>
+                <div class="relative">
+                    <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-secondary-200"></div>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-center">
+                            <div class="flex-1 text-right pr-8">
+                                <div class="card max-w-sm ml-auto">
+                                    <h4 class="font-semibold mb-2">Started Programming</h4>
+                                    <p class="text-sm text-text-secondary">Began with Python and basic algorithms</p>
+                                </div>
+                            </div>
+                            <div class="w-4 h-4 bg-primary rounded-full border-4 border-surface shadow-sm z-10"></div>
+                            <div class="flex-1 pl-8">
+                                <span class="text-sm text-text-secondary font-medium">2021</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <div class="flex-1 text-right pr-8">
+                                <span class="text-sm text-text-secondary font-medium">2022</span>
+                            </div>
+                            <div class="w-4 h-4 bg-accent rounded-full border-4 border-surface shadow-sm z-10"></div>
+                            <div class="flex-1 pl-8">
+                                <div class="card max-w-sm">
+                                    <h4 class="font-semibold mb-2">Web Development</h4>
+                                    <p class="text-sm text-text-secondary">Mastered React, Node.js, and full-stack development</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <div class="flex-1 text-right pr-8">
+                                <div class="card max-w-sm ml-auto">
+                                    <h4 class="font-semibold mb-2">Machine Learning</h4>
+                                    <p class="text-sm text-text-secondary">Dove into AI/ML with TensorFlow and PyTorch</p>
+                                </div>
+                            </div>
+                            <div class="w-4 h-4 bg-warning rounded-full border-4 border-surface shadow-sm z-10"></div>
+                            <div class="flex-1 pl-8">
+                                <span class="text-sm text-text-secondary font-medium">2023</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <div class="flex-1 text-right pr-8">
+                                <span class="text-sm text-text-secondary font-medium">2024</span>
+                            </div>
+                            <div class="w-4 h-4 bg-primary rounded-full border-4 border-surface shadow-sm z-10 animate-pulse"></div>
+                            <div class="flex-1 pl-8">
+                                <div class="card max-w-sm">
+                                    <h4 class="font-semibold mb-2">Advanced Systems</h4>
+                                    <p class="text-sm text-text-secondary">Cloud architecture, DevOps, and scalable systems</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Showcase -->
+    <section id="projects" class="section-padding bg-secondary-50">
+        <div class="container-max">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">Project Showcase</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Each project tells a story of problem-solving, innovation, and technical growth
+                </p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12 scroll-reveal">
+                <button class="filter-btn active px-6 py-2 rounded-full bg-primary text-white font-medium transition-all" data-filter="all">
+                    All Projects
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full bg-surface text-text-secondary hover:bg-primary hover:text-white font-medium transition-all" data-filter="web">
+                    Web Development
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full bg-surface text-text-secondary hover:bg-primary hover:text-white font-medium transition-all" data-filter="ml">
+                    Machine Learning
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full bg-surface text-text-secondary hover:bg-primary hover:text-white font-medium transition-all" data-filter="mobile">
+                    Mobile Apps
+                </button>
+            </div>
+
+            <!-- Project Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card card scroll-reveal transition-all duration-300 hover:scale-105" data-category="web">
+                    <div class="relative overflow-hidden rounded-lg mb-6">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="E-commerce Platform Dashboard" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110" loading="lazy" onerror="this.src='https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end justify-start p-4">
+                            <div class="flex space-x-2">
+                                <a href="project_detail_modal.html" class="bg-white/20 backdrop-blur-sm rounded-full p-2 hover:bg-white/30 transition-colors">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                    </svg>
+                                </a>
+                                <a href="https://github.com/Sankhasubhra123/ecommerce-platform" class="bg-white/20 backdrop-blur-sm rounded-full p-2 hover:bg-white/30 transition-colors">
+                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">Web Development</span>
+                        <div class="flex items-center text-text-secondary text-sm">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            3 months
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-semibold mb-3">E-commerce Platform</h3>
+                    <p class="text-text-secondary mb-4 text-sm leading-relaxed">
+                        Full-stack e-commerce solution with React, Node.js, and PostgreSQL. Features include real-time inventory management, payment processing, and admin dashboard.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">React</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Node.js</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">PostgreSQL</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Stripe</span>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-accent text-sm">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            Completed
+                        </div>
+                        <a href="project_detail_modal.html" class="text-primary hover:text-primary-700 text-sm font-medium transition-colors">
+                            View Details →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card card scroll-reveal transition-all duration-300 hover:scale-105" data-category="ml">
+                    <div class="relative overflow-hidden rounded-lg mb-6">
+                        <img src="https://images.pixabay.com/photo/2023/01/26/22/14/ai-generated-7747171_1280.jpg" alt="AI Image Recognition System" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110" loading="lazy" onerror="this.src='https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end justify-start p-4">
+                            <div class="flex space-x-2">
+                                <a href="project_detail_modal.html" class="bg-white/20 backdrop-blur-sm rounded-full p-2 hover:bg-white/30 transition-colors">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                    </svg>
+                                </a>
+                                <a href="https://github.com/Sankhasubhra123/ai-image-recognition" class="bg-white/20 backdrop-blur-sm rounded-full p-2 hover:bg-white/30 transition-colors">
+                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-3 py-1 bg-warning/10 text-warning text-xs font-medium rounded-full">Machine Learning</span>
+                        <div class="flex items-center text-text-secondary text-sm">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            4 months
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-semibold mb-3">AI Image Recognition</h3>
+                    <p class="text-text-secondary mb-4 text-sm leading-relaxed">
+                        Deep learning model for real-time object detection and classification. Achieved 94% accuracy on custom dataset using TensorFlow and computer vision techniques.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">TensorFlow</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Python</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">OpenCV</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Flask</span>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-accent text-sm">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            Completed
+                        </div>
+                        <a href="project_detail_modal.html" class="text-primary hover:text-primary-700 text-sm font-medium transition-colors">
+                            View Details →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card card scroll-reveal transition-all duration-300 hover:scale-105" data-category="mobile">
+                    <div class="relative overflow-hidden rounded-lg mb-6">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Fitness Tracking Mobile App" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2016/12/09/11/33/smartphone-1894723_1280.jpg'; this.onerror=null;" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end justify-start p-4">
+                            <div class="flex space-x-2">
+                                <a href="project_detail_modal.html" class="bg-white/20 backdrop-blur-sm rounded-full p-2 hover:bg-white/30 transition-colors">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                    </svg>
+                                </a>
+                                <a href="https://github.com/Sankhasubhra123/fitness-tracker" class="bg-white/20 backdrop-blur-sm rounded-full p-2 hover:bg-white/30 transition-colors">
+                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">Mobile App</span>
+                        <div class="flex items-center text-warning text-sm">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            In Progress
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-semibold mb-3">Fitness Tracker App</h3>
+                    <p class="text-text-secondary mb-4 text-sm leading-relaxed">
+                        React Native mobile app for fitness tracking with real-time workout monitoring, progress analytics, and social features. Integrates with wearable devices.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">React Native</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Firebase</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Redux</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Chart.js</span>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-warning text-sm">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            75% Complete
+                        </div>
+                        <a href="project_detail_modal.html" class="text-primary hover:text-primary-700 text-sm font-medium transition-colors">
+                            View Details →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View All Projects Button -->
+            <div class="text-center mt-12 scroll-reveal">
+                <a href="https://github.com/Sankhasubhra123?tab=repositories" class="btn-secondary inline-flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    View All Projects on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievement Gallery -->
+    <section id="achievements" class="section-padding">
+        <div class="container-max">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">Achievement Gallery</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Recognition and milestones that validate technical excellence and continuous growth
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <!-- Academic Excellence -->
+                <div class="card text-center scroll-reveal hover:scale-105 transition-transform duration-300">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Dean's List</h3>
+                    <p class="text-text-secondary text-sm mb-3">Fall 2023 & Spring 2024</p>
+                    <div class="text-2xl font-bold text-primary mb-1">8.22</div>
+                    <div class="text-xs text-text-secondary">Cumulative GPA</div>
+                </div>
+
+                <!-- Competition Success -->
+                <div class="card text-center scroll-reveal hover:scale-105 transition-transform duration-300">
+                    <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Hackathon Winner</h3>
+                    <p class="text-text-secondary text-sm mb-3">Stanford TreeHacks 2024</p>
+                    <div class="text-2xl font-bold text-accent mb-1">1st</div>
+                    <div class="text-xs text-text-secondary">Place - AI Category</div>
+                </div>
+
+                <!-- Technical Validation -->
+                <div class="card text-center scroll-reveal hover:scale-105 transition-transform duration-300">
+                    <div class="w-16 h-16 bg-warning/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Open Source</h3>
+                    <p class="text-text-secondary text-sm mb-3">GitHub Contributions</p>
+                    <div class="text-2xl font-bold text-warning mb-1">500+</div>
+                    <div class="text-xs text-text-secondary">Commits This Year</div>
+                </div>
+
+                <!-- Industry Recognition -->
+                <div class="card text-center scroll-reveal hover:scale-105 transition-transform duration-300">
+                    <div class="w-16 h-16 bg-error/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-error" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Internship</h3>
+                    <p class="text-text-secondary text-sm mb-3">Google Summer 2024</p>
+                    <div class="text-2xl font-bold text-error mb-1">4.9</div>
+                    <div class="text-xs text-text-secondary">Performance Rating</div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="scroll-reveal">
+                <h3 class="text-2xl font-semibold text-center mb-8">Certifications & Credentials</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="card flex items-center space-x-4 hover:shadow-hover transition-shadow">
+                        <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="AWS Certification" class="w-12 h-12 rounded-lg object-cover" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2021/08/04/13/06/software-developer-6521720_1280.jpg'; this.onerror=null;" />
+                        <div>
+                            <h4 class="font-semibold">AWS Cloud Practitioner</h4>
+                            <p class="text-sm text-text-secondary">Issued Dec 2024</p>
+                            <a href="https://aws.amazon.com/certification/verify" class="text-xs text-primary hover:underline">Verify Credential</a>
+                        </div>
+                    </div>
+
+                    <div class="card flex items-center space-x-4 hover:shadow-hover transition-shadow">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Google Cloud Certification" class="w-12 h-12 rounded-lg object-cover" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2020/05/18/16/17/social-media-5187243_1280.png'; this.onerror=null;" />
+                        <div>
+                            <h4 class="font-semibold">Google Cloud Associate</h4>
+                            <p class="text-sm text-text-secondary">Issued Nov 2024</p>
+                            <a href="https://cloud.google.com/certification/verify" class="text-xs text-primary hover:underline">Verify Credential</a>
+                        </div>
+                    </div>
+
+                    <div class="card flex items-center space-x-4 hover:shadow-hover transition-shadow">
+                        <img src="https://images.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png" alt="Meta React Certification" class="w-12 h-12 rounded-lg object-cover" loading="lazy" onerror="this.src='https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                        <div>
+                            <h4 class="font-semibold">Meta React Developer</h4>
+                            <p class="text-sm text-text-secondary">Issued Oct 2024</p>
+                            <a href="https://coursera.org/verify" class="text-xs text-primary hover:underline">Verify Credential</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Timeline -->
+    <section id="education" class="section-padding bg-secondary-50">
+        <div class="container-max">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">Education Timeline</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Academic journey focused on building strong foundations in computer science and emerging technologies
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="relative">
+                    <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-secondary-300"></div>
+                    
+                    <div class="space-y-12">
+                        <!-- Current Education -->
+                        <div class="relative flex items-start scroll-reveal">
+                            <div class="absolute left-6 w-4 h-4 bg-primary rounded-full border-4 border-surface shadow-sm"></div>
+                            <div class="ml-16">
+                                <div class="card **dark:bg-secondary-900**">
+                                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                                        <div>
+                                            <h3 class="text-xl font-semibold">B. Tech- Computer Science and Engineering</h3>
+                                            <p class="text-primary font-medium">Academy of Technology</p>
+                                        </div>
+                                        <div class="text-sm text-text-secondary mt-2 sm:mt-0">
+                                            <div class="flex items-center">
+                                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a1 1 0 011-1h6a1 1 0 011 1v4m-6 0h6m-6 0V7a1 1 0 00-1 1v10a1 1 0 001 1h6a1 1 0 001-1V8a1 1 0 00-1-1"/>
+                                                </svg>
+                                                2022 - 2026
+                                            </div>
+                                            <div class="flex items-center mt-1">
+                                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                                </svg>
+                                                GPA: 8.22/10.0
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <p class="text-text-secondary mb-4 **dark:text-secondary-300**">
+                                    </p>
+                                    
+                                    <div class="grid sm:grid-cols-2 gap-4">
+                                        <div>
+                                            <h4 class="font-semibold mb-2 text-sm">Relevant Coursework</h4>
+                                            <ul class="text-sm text-text-secondary space-y-1">
+                                                <li>• Data Structures & Algorithms</li>
+                                                <li>• Machine Learning</li>
+                                                <li>• Artificial Intelligence</li>
+                                                <li>• OOPS Concept</li>
+                                                <li>• Database Management Systems</li>
+                                                <li>• Software Engineering</li>
+                                                <li>• Operating Systems</li>
+                                                <li>• Software Engineering</li>
+                                                <li>• Data Warehousing & Data Mining</li>
+                                                <li>• Compiler Design</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <!-- <h4 class="font-semibold mb-2 text-sm">Key Projects</h4>
+                                            <ul class="text-sm text-text-secondary space-y-1">
+                                                <li>• Distributed Systems Project</li>
+                                                <li>• AI Ethics Research</li>
+                                                <li>• Mobile App Development</li>
+                                                <li>• Senior Capstone (In Progress)</li>
+                                            </ul> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- High School -->
+                        <div class="relative flex items-start scroll-reveal">
+                            <div class="absolute left-6 w-4 h-4 bg-accent rounded-full border-4 border-surface shadow-sm"></div>
+                            <div class="ml-16">
+                                <div class="card **dark:bg-secondary-900**">
+                                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                                        <div>
+                                            <h3 class="text-xl font-semibold">Indian Certificate of Secondary Education Examination</h3>
+                                            <p class="text-accent font-medium">St. Luke's Day School</p>
+                                        </div>
+                                        <div class="text-sm text-text-secondary mt-2 sm:mt-0">
+                                            <div class="flex items-center">
+                                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a1 1 0 011-1h6a1 1 0 011 1v4m-6 0h6m-6 0V7a1 1 0 00-1 1v10a1 1 0 001 1h6a1 1 0 001-1V8a1 1 0 00-1-1"/>
+                                                </svg>
+                                                2021 - 2022
+                                            </div>
+                                            <div class="flex items-center mt-1">
+                                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                                </svg>
+                                                94% Achieved
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <p class="text-text-secondary mb-4 **dark:text-secondary-300**">
+                                        <div class="grid sm:grid-cols-2 gap-4">
+                                            <div>
+                                                <h4 class="font-semibold mb-2 text-sm">Relevant Coursework</h4>
+                                                    <ul class="text-sm text-text-secondary space-y-1">
+                                                        <li>• English</li>
+                                                        <li>• Mathematics</li>
+                                                        <li>• Bengali</li>
+                                                        <li>• Physics</li>
+                                                        <li>• Chemistry</li>
+                                                        <li>• Computer Science</li>
+                                                    </ul>
+                                            </div>
+                                        </div>
+                                    </p>
+                                    
+                                    <!-- <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">AP Computer Science A</span>
+                                        <span class="px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">AP Calculus BC</span>
+                                        <span class="px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">AP Physics</span>
+                                        <span class="px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">National Honor Society</span>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!-- High School -->
+                        <div class="relative flex items-start scroll-reveal">
+                            <div class="absolute left-6 w-4 h-4 bg-accent rounded-full border-4 border-surface shadow-sm"></div>
+                            <div class="ml-16">
+                                <div class="card **dark:bg-secondary-900**">
+                                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                                        <div>
+                                            <h3 class="text-xl font-semibold">Indian Certificate of Secondary Education Examination</h3>
+                                            <p class="text-accent font-medium">St. Luke's Day School</p>
+                                        </div>
+                                        <div class="text-sm text-text-secondary mt-2 sm:mt-0">
+                                            <div class="flex items-center">
+                                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a1 1 0 011-1h6a1 1 0 011 1v4m-6 0h6m-6 0V7a1 1 0 00-1 1v10a1 1 0 001 1h6a1 1 0 001-1V8a1 1 0 00-1-1"/>
+                                                </svg>
+                                                2019 - 2020
+                                            </div>
+                                            <div class="flex items-center mt-1">
+                                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                                </svg>
+                                                95.6% Achieved
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <p class="text-text-secondary mb-4 **dark:text-secondary-300**">
+                                        <div class="grid sm:grid-cols-2 gap-4">
+                                            <div>
+                                                <h4 class="font-semibold mb-2 text-sm">Relevant Coursework</h4>
+                                                    <ul class="text-sm text-text-secondary space-y-1">
+                                                        <li>• English Language</li>
+                                                        <li>• Literature in English</li>
+                                                        <li>• Mathematics</li>
+                                                        <li>• Bengali</li>
+                                                        <li>• Physics</li>
+                                                        <li>• Chemistry</li>
+                                                        <li>• Biology</li>
+                                                        <li>• Computer Science</li>
+                                                        <li>• History & Civics</li>
+                                                        <li>• Geography</li>
+
+                                                    </ul>
+                                            </div>
+                                        </div>
+                                    </p>
+                                    
+                                    <!-- <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">AP Computer Science A</span>
+                                        <span class="px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">AP Calculus BC</span>
+                                        <span class="px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">AP Physics</span>
+                                        <span class="px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">National Honor Society</span>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Chronicle -->
+    <section id="experience" class="section-padding">
+        <div class="container-max">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">Experience Chronicle</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Professional journey demonstrating growth, impact, and readiness to contribute from day one
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                                <!-- Cognizant Internship -->
+                <div class="card scroll-reveal hover:shadow-hover transition-all duration-300">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center">
+                            <img src="/assets/Cognizant logo.jpg" alt="Cognizant Logo" class="w-12 h-12 rounded-lg object-cover mr-4" loading="lazy" onerror="" />
+                            <div>
+                                <h3 class="text-xl font-semibold">Java Full Stack Developer Intern</h3>
+                                <p class="text-primary font-medium">Cognizant – Digital Nurture 4.0 Program</p>
+                            </div>
+                        </div>
+                        <span class="text-sm text-text-secondary bg-secondary-100 px-3 py-1 rounded-full">June 2025 – August 2025</span>
+                    </div>
+                    
+                    <p class="text-text-secondary mb-4 **dark:text-secondary-300**">
+                        Completed an 8-week Digital Nurture 4.0 Internship under Cognizant’s Java Full Stack Engineer (FSE) Track, focusing on enterprise-grade software development and modern engineering practices.</p>
+                    
+                    <div class="space-y-3 mb-4">
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Gained hands-on experience in Java, Spring Boot, Hibernate, and Microservices</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Built and tested full stack applications using React/Angular and REST APIs</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Practiced TDD, CI/CD pipelines, Docker containerization, and cloud deployment</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Strengthened understanding of Design Patterns, DSA, PL/SQL, and DevOps fundamentals</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Explored GenAI fundamentals and applied industry-grade engineering workflows</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Java</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Spring Boot</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Hibernate</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Microservices</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">React</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">SQL</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Docker</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Cloud</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">TDD</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">CI/CD</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Design Patterns</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">GenAI</span>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+                <!-- Salesforce Internship -->
+                <div class="card scroll-reveal hover:shadow-hover transition-all duration-300 **dark:bg-secondary-900** dark:hover:shadow-lg">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center">
+                            <img src="/assets/salesforce logo.jpg" alt="Salesforce Logo" class="w-12 h-12 rounded-lg object-cover mr-4" loading="lazy" onerror="" />
+                            <div>
+                                <h3 class="text-xl font-semibold">Salesforce Developer Intern</h3>
+                                <p class="text-primary font-medium">Agentblazer Champion Program (Smartbridge x Salesforce x AICTE)</p>
+                            </div>
+                        </div>
+                        <span class="text-sm text-text-secondary bg-secondary-100 px-3 py-1 rounded-full">May – July 2025</span>
+                    </div>
+                    
+                    <p class="text-text-secondary mb-4 **dark:text-secondary-300**">
+                        Worked on real-world Salesforce projects focused on CRM customization, automation, and UI development.                    </p>
+                    
+                    <div class="space-y-3 mb-4">
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Built automated workflows improving process efficiency by 30%</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Developed Apex triggers and Lightning Web Components (LWC) for custom solutions</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Achieved Apex Specialist Superbadge and Agentblazer Champion Certification</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Collaborated with mentors from Smartbridge and Salesforce India on key modules</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Salesforce</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Apex</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">LWC</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Flow Automation</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">CRM Cloud</span>
+                    </div>
+                </div>
+                <!-- IOT ML Internship -->
+                <div class="card scroll-reveal hover:shadow-hover transition-all duration-300">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center">
+                            <img src="/assets/iit kgp logo.jpg" alt="IIT Kharagpur Logo" class="w-12 h-12 rounded-lg object-cover mr-4" loading="lazy" onerror="" />
+                            <div>
+                                <h3 class="text-xl font-semibold">IoT & Machine Learning Trainee</h3>
+                                <p class="text-primary font-medium">IIT Kharagpur – Short-Term Course & Kshitij 2024 Participation</p>
+                            </div>
+                        </div>
+                        <span class="text-sm text-text-secondary bg-secondary-100 px-3 py-1 rounded-full">January 2024</span>
+                    </div>
+                    
+                    <p class="text-text-secondary mb-4 **dark:text-secondary-300**">
+                        Attended a 4-day intensive course on “Hands-on Introduction to Internet of Things with Machine Learning” under Prof. Sudip Misra, and participated in Kshitij 2024, Asia’s largest techno-management fest.</p>
+                    
+                    <div class="space-y-3 mb-4">
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Gained hands-on experience with IoT systems, cloud integration, and ML techniques</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Explored IoT protocols (MQTT, CoAP, XMPP) and real-world device communication</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Worked on sensor-actuator interfacing and data-driven IoT applications</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Attended expert lectures and tech competitions, expanding exposure to innovation</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Strengthened technical and analytical skills through immersive, practical learning</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">IoT</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Machine Learning</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Cloud Computing</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Sensor Networks</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Automation Systems</span>
+                    </div>
+                </div>
+
+                <!-- Oasis Internship -->
+                <div class="card scroll-reveal hover:shadow-hover transition-all duration-300">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center">
+                            <img src="/assets/oasis_infobyte_logo.jpeg" alt="Oasis Infobyte Logo" class="w-12 h-12 rounded-lg object-cover mr-4" loading="lazy" onerror="" />
+                            <div>
+                                <h3 class="text-xl font-semibold">Full Stack Developer Intern</h3>
+                                <p class="text-primary font-medium">Oasis Infobyte – Student Internship Program</p>
+                            </div>
+                        </div>
+                        <span class="text-sm text-text-secondary bg-secondary-100 px-3 py-1 rounded-full">August 2025</span>
+                    </div>
+                    
+                    <p class="text-text-secondary mb-4 **dark:text-secondary-300**">
+                        Completed a 1-month internship focused on full stack web development and modern UI design.</p>
+                    
+                    <div class="space-y-3 mb-4">
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Built and tested APIs using Node.js, Express, and MongoDB</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Developed responsive frontends with React, Vite, Tailwind CSS, and ShadCN UI</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Integrated Razorpay for seamless online payments</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Gained hands-on experience in CORS handling, API integration, and deployment</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Contributed to real-world, industry-oriented projects enhancing practical expertise</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Node.js</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Express</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">React</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">MongoDB</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Tailwind CSS</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">ShadCN UI</span>
+                    </div>
+                </div>
+
+                <!-- CodSoft Internship -->
+                <div class="card scroll-reveal hover:shadow-hover transition-all duration-300">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center">
+                            <img src="/assets/CodSoft logo1.jpeg" alt="CodSoft Logo" class="w-12 h-12 rounded-lg object-cover mr-4" loading="lazy" onerror="" />
+                            <div>
+                                <h3 class="text-xl font-semibold">Java Programming Intern Intern</h3>
+                                <p class="text-primary font-medium">CodSoft – Certificate of Internship Program (CIP)</p>
+                            </div>
+                        </div>
+                        <span class="text-sm text-text-secondary bg-secondary-100 px-3 py-1 rounded-full">September 2025</span>
+                    </div>
+                    
+                    <p class="text-text-secondary mb-4 **dark:text-secondary-300**">
+                        Completed a 4-week internship focused on Core Java development, OOP principles, and real-world problem-solving.</p>
+                    
+                    <div class="space-y-3 mb-4">
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Built and optimized Java-based console applications and interactive programs</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Strengthened skills in OOP, data structures, and algorithmic logic</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Gained hands-on experience in modular design and clean coding practices</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Delivered multiple projects under structured mentorship and review cycles</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Contributed to real-world, industry-oriented projects enhancing practical expertise</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Java</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">OOP</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Data Structures</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Algorithms</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Software Development</span>
+                    </div>
+                </div>
+
+                <!-- Freelance Work -->
+                <div class="card scroll-reveal hover:shadow-hover transition-all duration-300">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold">Freelance Developer</h3>
+                                <p class="text-primary font-medium">Self-Employed</p>
+                            </div>
+                        </div>
+                        <span class="text-sm text-text-secondary bg-secondary-100 px-3 py-1 rounded-full">2023 - Present</span>
+                    </div>
+                    
+                    <p class="text-text-secondary mb-4 **dark:text-secondary-300**">
+                        Providing full-stack development services to small businesses and startups. Specialized in creating responsive web applications and e-commerce solutions that drive business growth.
+                    </p>
+                    
+                    <div class="space-y-3 mb-4">
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Delivered 12+ projects with 100% client satisfaction rate</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Increased client revenue by average of 35% through optimized solutions</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Maintained long-term relationships with 8 recurring clients</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">React</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Node.js</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">MongoDB</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">AWS</span>
+                    </div>
+                </div>
+
+                <!-- Teaching Assistant -->
+                <div class="card scroll-reveal hover:shadow-hover transition-all duration-300">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold">Teaching Assistant</h3>
+                                <p class="text-accent font-medium">Academy of Technology</p>
+                            </div>
+                        </div>
+                        <span class="text-sm text-text-secondary bg-secondary-100 px-3 py-1 rounded-full">Fall 2024</span>
+                    </div>
+                    
+                    <p class="text-text-secondary mb-4 **dark:text-secondary-300**">
+                        Supporting CS106A (Programming Methodology) course by mentoring 40+ students, grading assignments, and conducting weekly office hours. Helping students build strong programming fundamentals.
+                    </p>
+                    
+                    <div class="space-y-3 mb-4">
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Achieved 4.8/5.0 student satisfaction rating</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Improved student pass rate by 15% through personalized guidance</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Created supplementary learning materials used by 200+ students</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Java</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Mentoring</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Curriculum Development</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Leadership</span>
+                    </div>
+                </div>
+
+                <!-- Research Assistant -->
+                <div class="card scroll-reveal hover:shadow-hover transition-all duration-300">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-warning/10 rounded-lg flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold **dark:text-white**">Research Assistant</h3>
+                                <p class="text-warning font-medium">Stanford AI Lab</p>
+                            </div>
+                        </div>
+                        <span class="text-sm text-text-secondary bg-secondary-100 px-3 py-1 rounded-full">2023 - 2024</span>
+                    </div>
+                    
+                    <p class="text-text-secondary mb-4 **dark:text-secondary-300**">
+                        Contributed to cutting-edge research in computer vision and natural language processing. Worked under Dr. Sarah Johnson on projects related to multimodal AI systems and ethical AI development.
+                    </p>
+                    
+                    <div class="space-y-3 mb-4">
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Co-authored 2 papers published in top-tier conferences</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Developed novel algorithms improving model accuracy by 12%</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-sm text-text-secondary">Presented findings at 3 international conferences</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded **dark:bg-secondary-800 dark:text-secondary-200**">PyTorch</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Computer Vision</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">NLP</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">Research</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Command Center -->
+    <section id="contact" class="section-padding bg-secondary-50 **dark:bg-secondary-950**">
+        <div class="container-max">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4 **dark:text-white**">...</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Ready to collaborate, contribute, and create something amazing together
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <!-- Contact Information -->
+                <div class="scroll-reveal">
+                    <div class="card mb-8">
+                        <h3 class="text-2xl font-semibold mb-6">Let's Connect</h3>
+                        <p class="text-text-secondary mb-6 leading-relaxed">
+                            I'm always excited to discuss new opportunities, innovative projects, or potential collaborations. Whether you're looking for a dedicated team member or want to explore how we can work together, I'd love to hear from you.
+                        </p>
+                        
+                        <!-- Availability Status -->
+                        <!-- <div class="flex items-center mb-6 p-4 bg-accent/10 rounded-lg">
+                            <div class="w-3 h-3 bg-accent rounded-full animate-pulse mr-3"></div>
+                            <span class="text-accent font-medium">Available for Summer 2025 Internships</span>
+                        </div> -->
+
+                        <!-- Contact Methods -->
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                                    <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Email</p>
+                                    <a href="mailto:sankhasubhrawork123@gmail.com" class="text-primary hover:underline">sankhasubhrawork123@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center mr-4">
+                                    <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-medium">LinkedIn</p>
+                                    <a href="https://www.linkedin.com/in/sankha-subhra-chakraborty-119598273/?originalSubdomain=in" class="text-primary hover:underline">linkedin.com/in/sankha-subhra-chakraborty</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-warning/10 rounded-lg flex items-center justify-center mr-4">
+                                    <svg class="w-5 h-5 text-warning" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-medium">GitHub</p>
+                                    <a href="https://github.com/Sankhasubhra123" class="text-primary hover:underline">github.com/Sankhasubhra123</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-error/10 rounded-lg flex items-center justify-center mr-4">
+                                    <svg class="w-5 h-5 text-error" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Location</p>
+                                    <span class="text-text-secondary">Kolkata, West Bengal, India</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resume Download -->
+                    <div class="card **dark:bg-secondary-900**">
+                        <h3 class="text-xl font-semibold mb-4">Resume Download Station</h3>
+                        <p class="text-text-secondary mb-4 **dark:text-secondary-300**">
+                            Get the latest version of my resume with detailed information about my experience, skills, and achievements.
+                        </p>
+                        <a href="resume_pdf_view.html" class="btn-primary inline-flex items-center w-full justify-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                            Download Resume (PDF)
+                        </a>
+                        <p class="text-xs text-text-secondary mt-2 text-center">Last updated: December 2024</p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="scroll-reveal">
+                    <div class="card **dark:bg-secondary-900**">
+                        <h3 class="text-2xl font-semibold mb-6">Send a Message</h3>
+                        <form id="contact-form" class="space-y-6">
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="firstName" class="block text-sm font-medium text-text-primary mb-2">First Name</label>
+                                    <input type="text" id="firstName" name="firstName" required class="input-field" placeholder="John" />
+                                </div>
+                                <div>
+                                    <label for="lastName" class="block text-sm font-medium text-text-primary mb-2">Last Name</label>
+                                    <input type="text" id="lastName" name="lastName" required class="input-field" placeholder="Doe" />
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-text-primary mb-2">Email Address</label>
+                                <input type="email" id="email" name="email" required class="input-field" placeholder="john.doe@company.com" />
+                            </div>
+
+                            <div>
+                                <label for="company" class="block text-sm font-medium text-text-primary mb-2">Company (Optional)</label>
+                                <input type="text" id="company" name="company" class="input-field" placeholder="Your Company" />
+                            </div>
+
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-text-primary mb-2">Subject</label>
+                                <select id="subject" name="subject" required class="input-field">
+                                    <option value>Select a subject</option>
+                                    <option value="internship">Internship Opportunity</option>
+                                    <option value="full-time">Full-time Position</option>
+                                    <option value="freelance">Freelance Project</option>
+                                    <option value="collaboration">Collaboration</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-text-primary mb-2">Message</label>
+                                <textarea id="message" name="message" rows="5" required class="input-field resize-none" placeholder="Tell me about your project, opportunity, or how we can work together..."></textarea>
+                            </div>
+
+                            <div class="flex items-start">
+                                <input type="checkbox" id="privacy" name="privacy" required class="mt-1 mr-3 w-4 h-4 text-primary border-border rounded focus:ring-primary" />
+                                <label for="privacy" class="text-sm text-text-secondary">
+                                    I agree to the privacy policy and consent to having my information stored and processed for the purpose of responding to my inquiry.
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn-primary w-full inline-flex items-center justify-center">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                                </svg>
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary-900 text-secondary-300 py-12">
+        <div class="container-max px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 text-primary mr-2" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2L3 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-13-5z"/>
+                            <path d="M12 14l2 2 6-6" stroke="white" stroke-width="2" fill="none"/>
+                        </svg>
+                        <span class="text-xl font-bold text-white">PortfolioForge</span>
+                    </div>
+                    <p class="text-sm leading-relaxed">
+                        Crafting digital experiences through the intersection of technical excellence and creative vision. Building solutions that matter.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#about" class="hover:text-primary transition-colors">About</a></li>
+                        <li><a href="#skills" class="hover:text-primary transition-colors">Skills</a></li>
+                        <li><a href="#projects" class="hover:text-primary transition-colors">Projects</a></li>
+                        <li><a href="#achievements" class="hover:text-primary transition-colors">Achievements</a></li>
+                        <li><a href="#contact" class="hover:text-primary transition-colors">Contact</a></li>
+                        <li><a href="resume_pdf_view.html" class="hover:text-primary transition-colors">Resume</a></li>
+                    </ul>
+                </div>
+
+                <!-- Connect -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Connect</h3>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="https://github.com/Sankhasubhra123-dev" class="text-secondary-400 hover:text-primary transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/sankha-subhra-chakraborty-119598273/?originalSubdomain=in" class="text-secondary-400 hover:text-primary transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:sankhasubhrawork123@email.com" class="text-secondary-400 hover:text-primary transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="text-sm">
+                        <strong class="text-white">Email:</strong><br />
+                        sankhasubhrawork123@email.com
+                    </p>
+                </div>
+            </div>
+
+            <div class="border-t border-secondary-700 mt-8 pt-8 text-center">
+                <p class="text-sm">
+                    © 2025 Sankha Subhra Chakraborty. All Rights Reserved. Built with passion and precision.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+
+        <!-- <script>
+            const themeToggle = document.getElementById('theme-toggle');
+            themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            });
+        </script> -->
+
+
+
+
+
+
+    <script>
+        // Typing Animation
+        const typingText = document.getElementById('typing-text');
+        const roles = [
+            'Full Stack Developer',
+            'Computer Science Student', 
+            'AI/ML Enthusiast',
+            'Problem Solver',
+            'Innovation Driver'
+        ];
+        
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        
+        function typeRole() {
+            const currentRole = roles[roleIndex];
+            
+            if (isDeleting) {
+                typingText.textContent = currentRole.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingText.textContent = currentRole.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            
+            let typeSpeed = isDeleting ? 50 : 100;
+            
+            if (!isDeleting && charIndex === currentRole.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                typeSpeed = 500;
+            }
+            
+            setTimeout(typeRole, typeSpeed);
+        }
+        
+        // Start typing animation
+        typeRole();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        let isDark = false;
+        
+        themeToggle.addEventListener('click', () => {
+            isDark = !isDark;
+            themeToggle.classList.toggle('active', isDark);
+            document.documentElement.classList.toggle('dark', isDark);
+        });
+
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    const offsetTop = targetSection.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+                
+                // Close mobile menu
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Progress Bar
+        const progressBar = document.getElementById('progress-bar');
+        
+        function updateProgressBar() {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            progressBar.style.width = scrollPercent + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgressBar);
+
+        // Scroll Reveal Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Project Filter
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.getAttribute('data-filter');
+                
+                // Update active button
+                filterButtons.forEach(b => b.classList.remove('active', 'bg-primary', 'text-white'));
+                filterButtons.forEach(b => b.classList.add('bg-surface', 'text-text-secondary'));
+                btn.classList.add('active', 'bg-primary', 'text-white');
+                btn.classList.remove('bg-surface', 'text-text-secondary');
+                
+                // Filter projects
+                projectCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    if (filter === 'all' || category === filter) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 100);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Contact Form
+        const contactForm = document.getElementById('contact-form');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData);
+            
+            // Simulate form submission
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = `
+                <svg class="w-5 h-5 mr-2 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                </svg>
+                Sending...
+            `;
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                alert('Thank you for your message! I\'ll get back to you soon.');
+                contactForm.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+
+        // Navbar Background on Scroll
+        const navbar = document.getElementById('navbar');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-surface/95');
+                navbar.classList.remove('bg-surface/80');
+            } else {
+                navbar.classList.add('bg-surface/80');
+                navbar.classList.remove('bg-surface/95');
+            }
+        });
+
+        // Skill Bar Animation
+        const skillBars = document.querySelectorAll('.skill-item');
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBar = entry.target.querySelector('.bg-primary, .bg-accent, .bg-warning');
+                    if (progressBar) {
+                        progressBar.style.width = '0%';
+                        setTimeout(() => {
+                            const width = progressBar.style.width;
+                            progressBar.style.width = width;
+                        }, 200);
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        skillBars.forEach(bar => skillObserver.observe(bar));
+    </script>
+    <script> 
+        // Theme Toggle - New, Complete Logic
+const themeToggle = document.getElementById('theme-toggle');
+
+// 1. On page load, check for saved theme in local storage or system preference
+if (
+    localStorage.theme === 'dark' || 
+    (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+) {
+    document.documentElement.classList.add('dark');
+} else {
+    document.documentElement.classList.remove('dark');
+}
+
+// 2. Function to update the theme and store preference
+function updateTheme(isDark) {
+    const sunIcon = document.getElementById('sun-icon');
+    const moonIcon = document.getElementById('moon-icon');
+
+    if (isDark) {
+        document.documentElement.classList.add('dark');
+        localStorage.theme = 'dark';
+        // Show Moon, Hide Sun
+        if (sunIcon) sunIcon.classList.add('hidden');
+        if (moonIcon) moonIcon.classList.remove('hidden');
+    } else {
+        document.documentElement.classList.remove('dark');
+        localStorage.theme = 'light';
+        // Show Sun, Hide Moon
+        if (sunIcon) sunIcon.classList.remove('hidden');
+        if (moonIcon) moonIcon.classList.add('hidden');
+    }
+}
+
+// 3. Set the initial state of the button icon/style
+const initialIsDark = document.documentElement.classList.contains('dark');
+const sunIcon = document.getElementById('sun-icon');
+const moonIcon = document.getElementById('moon-icon');
+
+if (initialIsDark) {
+    // Initial state is Dark: show Moon
+    if (sunIcon) sunIcon.classList.add('hidden');
+    if (moonIcon) moonIcon.classList.remove('hidden');
+} else {
+    // Initial state is Light: show Sun
+    if (sunIcon) sunIcon.classList.remove('hidden');
+    if (moonIcon) moonIcon.classList.add('hidden');
+}
+
+// 4. Handle the button click event
+themeToggle.addEventListener('click', () => {
+    const isCurrentlyDark = document.documentElement.classList.contains('dark');
+    updateTheme(!isCurrentlyDark);
+});
+
+
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
